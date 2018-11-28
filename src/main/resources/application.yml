@@ -1,0 +1,42 @@
+server:
+  port: 8100
+logging:
+  file: ./log/kafka-monitoring.log
+  pattern:
+    console: "%date{yyyy-MM-dd HH:mm:ss.SSS} -%5level [kafka-monitoring][%15.15thread] %-40.40logger{39} [%6line]: %msg%n"
+
+spring:
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:~/monitoring-db;AUTO_SERVER=TRUE
+    username: sillyhat
+    password: sillyhat
+#    tomcat:
+#      test-on-borrow: true
+#      validation-query: select 1
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+#      ddl-auto: none
+    show-sql: true
+
+  flyway:
+    url: jdbc:h2:file:~/monitoring-db;AUTO_SERVER=TRUE
+    user: sillyhat
+    password: sillyhat
+#    validate-on-migrate: true
+#    enabled: true
+
+
+kafka-monitoring-properties:
+  bootstrap-servers: 172.28.2.22:9090,172.28.2.22:9091,172.28.2.22:9092
+  group-id: kafka-monitoring
+  consumer-count: 20000
+  elasticsearch-hostname: 10.60.12.111
+  elasticsearch-port: 9200
+  elasticsearch-scheme: http
