@@ -1,6 +1,5 @@
-package fashion.deja.common.rest;
+package com.sillyhat.kafkamonitoring.common;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,15 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DejaApi<T> {
+public class Api<T> {
 
     private int ret;
 
     private T data;
 
     private String msg;
-
-    @JsonProperty("error_message")
-    private DejaApiResponse.ErrorMessage errorMessage;
 
 }

@@ -1,4 +1,4 @@
-package fashion.deja.datasynchronize.config;
+package com.sillyhat.kafkamonitoring.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,7 @@ public class SwaggerConfig {
             .useDefaultResponseMessages(false)
             .genericModelSubstitutes(ResponseEntity.class)
             .select()
-            .apis(RequestHandlerSelectors.basePackage("fashion.deja.datasynchronize"))
+            .apis(RequestHandlerSelectors.basePackage("com.sillyhat.kafkamonitoring"))
             .build();
     }
 }
