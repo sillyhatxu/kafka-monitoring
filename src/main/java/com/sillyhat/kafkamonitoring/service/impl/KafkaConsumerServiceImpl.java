@@ -98,7 +98,9 @@ public class KafkaConsumerServiceImpl implements KafkaConsumerService{
                             log.error("Close elaseicsearch client error.",e);
                         }
                     }
-                    kafkaMonitoringRepository.saveAll(kafkaMonitoringList);
+                    for (KafkaMonitoring kafkaMonitoring : kafkaMonitoringList) {
+                        kafkaMonitoringRepository.updateKafkaMonitoringOffset(kafkaMonitoring.getOffset(),kafkaMonitoring.getId());
+                    }
                 }
             }
         } catch (WakeupException we){
