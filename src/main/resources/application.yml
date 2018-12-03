@@ -12,21 +12,23 @@ spring:
 
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:~/monitoring-db;AUTO_SERVER=TRUE
+    url: jdbc:h2:file:/app/database/monitoring-db;AUTO_SERVER=TRUE
+#    url: jdbc:h2:file:~/monitoring-db;AUTO_SERVER=TRUE
     username: sillyhat
     password: sillyhat
 #    tomcat:
 #      test-on-borrow: true
 #      validation-query: select 1
   jpa:
-    generate-ddl: true
+    generate-ddl: false
     hibernate:
-      ddl-auto: update
-#      ddl-auto: none
-    show-sql: true
+#      ddl-auto: update
+      ddl-auto: none
+    show-sql: false
 
   flyway:
-    url: jdbc:h2:file:~/monitoring-db;AUTO_SERVER=TRUE
+    url: jdbc:h2:file:/app/database/monitoring-db;AUTO_SERVER=TRUE
+#    url: jdbc:h2:file:~/monitoring-db;AUTO_SERVER=TRUE
     user: sillyhat
     password: sillyhat
 #    validate-on-migrate: true
@@ -34,7 +36,7 @@ spring:
 
 
 kafka-monitoring-properties:
-  bootstrap-servers: 172.28.2.22:9090,172.28.2.22:9091,172.28.2.22:9092
+  bootstrap-servers: 10.60.12.238:9092,10.60.12.238:9091,10.60.12.238:9090
   group-id: kafka-monitoring
   consumer-count: 20000
   elasticsearch-hostname: 10.60.12.111

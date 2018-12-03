@@ -12,6 +12,8 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 
 WORKDIR /app
 
+RUN mkdir database
+
 EXPOSE 8100
 
 ADD build/libs/kafka-monitoring-0.0.1-SNAPSHOT.jar /app/app.jar

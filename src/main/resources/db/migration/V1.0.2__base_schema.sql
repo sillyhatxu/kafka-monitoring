@@ -6,3 +6,4 @@ insert into kafka_monitoring (kafka_topic,kafka_partition,kafka_offset,is_delete
 insert into kafka_monitoring (kafka_topic,kafka_partition,kafka_offset,is_delete,created_date,last_modified_date) values ('deja_products',0,0,false,now(),now());
 insert into kafka_monitoring (kafka_topic,kafka_partition,kafka_offset,is_delete,created_date,last_modified_date) values ('deja_products_price',0,0,false,now(),now());
 insert into kafka_monitoring (kafka_topic,kafka_partition,kafka_offset,is_delete,created_date,last_modified_date) values ('deja_products_inventory',0,0,false,now(),now());
+insert into kafka_monitoring (kafka_topic,kafka_partition,kafka_offset,is_delete,created_date,last_modified_date) values ('deja_influencer_region',0,0,false,now(),now());
